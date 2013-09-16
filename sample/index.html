@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="mainModule">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <!-- Include both angular.js and angular-ui-router.js-->
+    <script src="../lib/angular-1.1.4.js"></script>
+    <!-- state.js takes care of all the state configuration, where all the magic's at-->
+    <script src="states.js"></script>
+
+    <!-- could easily use a custom property of the state here instead of 'name' -->
+    <title ng-bind="$state.current.name + ' - ui-router'">ui-router</title>
+  </head>
+  <body ng-controller="mainController">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <ul class="nav">
+              <li ng-class="{ active: $state.includes('settings') }" ui-state="settings"><a>Settings</a></li>
+              <li ng-class="{ active: $state.includes('report') }" ui-state="report"><a>Report</a></li>
+            </ul>
+        </div>
+    </div>
+    {{currentState}}
+    <div ui-view="settings">
+      Settings
+    </div>
+    <div ui-view="report">
+        Report
+    </div>
+  </body>
+</html>
