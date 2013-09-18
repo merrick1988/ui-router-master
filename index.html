@@ -6,15 +6,17 @@
 
     <!-- Include both angular.js and angular-ui-router.js-->
     <script src="lib/angular-1.1.4.js"></script>
+
     <!-- state.js takes care of all the state configuration, where all the magic's at-->
     <script src="js/uiRouter.js"></script>
   </head>
-  <body ng-controller="mainController">
+
+  <body>
     <div class="navbar">
         <div class="navbar-inner">
             <ul class="nav">
-              <li ui-state="settings" ui-menu><a>Settings</a></li>
-              <li ui-state="report" ui-menu><a>Report</a></li>
+              <li ui-state="settings"><a>Settings</a></li>
+              <li ui-state="report"><a>Report</a></li>
             </ul>
         </div>
     </div>
